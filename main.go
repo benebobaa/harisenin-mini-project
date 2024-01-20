@@ -29,7 +29,7 @@ func initDB(dbDriver string, dbSource string) (*sql.DB, error) {
 }
 
 type PostData struct {
-	User     string `json:"user"`
+	Username string `json:"username"`
 	Password string `json:"password"`
 }
 
@@ -62,8 +62,8 @@ func main() {
 		}
 
 		// Insert data into the database
-		SQL := `INSERT INTO "user" (user, password) VALUES ($1, $2)`
-		_, err := db.Exec(SQL, postData.User, postData.Password)
+		SQL := `INSERT INTO "user" (username, password) VALUES ($1, $2)`
+		_, err := db.Exec(SQL, postData.Username, postData.Password)
 		if err != nil {
 			if pqErr, ok := err.(*pq.Error); ok {
 				return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": pqErr.Message})

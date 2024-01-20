@@ -16,6 +16,6 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "user": "bene",
+  "user": "testing",
   "password": "beneboba"
 }

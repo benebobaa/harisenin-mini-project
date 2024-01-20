@@ -1,6 +1,90 @@
 POST http://54.91.18.165:8080/api/user
 Accept: application/json
 Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "testing",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T045952.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/userw
+Accept: application/json
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "testing",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T045949.404.txt
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Content-Length: 49
+Content-Type: */*; charset=UTF-8
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "testing",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T045938.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "testing",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T045928.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 46
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "bene",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T045918.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
 Content-Length: 46
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
