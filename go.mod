@@ -1,6 +1,6 @@
 module github.com/benebobaa/harisenin-mini-project
 
-go 1.21.3
+go 1.21
 
 require (
 	github.com/andybalholm/brotli v1.1.0 // indirect

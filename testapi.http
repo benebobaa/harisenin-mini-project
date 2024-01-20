@@ -1,0 +1,10 @@
+### Localhost
+GET http://localhost:8080
+Accept: application/json
+Content-Type: application/json
+
+
+### Register
+POST http://localhost:8080/register
+Accept: application/json
+Content-Type: application/json

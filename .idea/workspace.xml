@@ -42,6 +42,8 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
+    "HTTP Request.testapi | Localhost.executor": "Run",
+    "HTTP Request.testapi | Register.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
@@ -57,6 +59,20 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RunManager" selected="HTTP Request.testapi | Register">
+    <configuration name="testapi | Localhost" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" requestIdentifier="Localhost" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="testapi | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="2" requestIdentifier="Register" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.testapi | Register" />
+        <item itemvalue="HTTP Request.testapi | Localhost" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
