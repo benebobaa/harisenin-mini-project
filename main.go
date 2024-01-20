@@ -62,7 +62,8 @@ func main() {
 		}
 
 		// Insert data into the database
-		_, err := db.Exec(`INSERT INTO "user" (user, password) VALUES ($1, $2)`, postData.User, postData.Password)
+		SQL := `INSERT INTO "user" (user, password) VALUES ($1, $2)`
+		_, err := db.Exec(SQL, postData.User, postData.Password)
 		if err != nil {
 			if pqErr, ok := err.(*pq.Error); ok {
 				return c.Status(fiber.StatusInternalServerError).JSON(fiber.Map{"error": pqErr.Message})

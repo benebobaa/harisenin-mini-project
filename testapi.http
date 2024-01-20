@@ -4,7 +4,18 @@ Accept: application/json
 Content-Type: application/json
 
 
-### Register
-POST http://localhost:8080/register
+### Ping
+POST http://54.91.18.165:8080/ping
 Accept: application/json
 Content-Type: application/json
+
+
+### Register
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+
+{
+  "user": "bene",
+  "password": "beneboba"
+}

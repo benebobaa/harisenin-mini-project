@@ -1,3 +1,78 @@
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 46
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "bene",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T045257.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 46
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "bene",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T045143.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 38
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "email": "",
+    "password": "",
+}
+
+<> 2024-01-21T045119.400.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T045103.400.json
+
+###
+
+POST http://54.91.18.165:8080/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T045032.200.txt
+
+###
+
 POST http://localhost:8080/register
 Accept: application/json
 Content-Type: application/json
