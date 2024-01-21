@@ -1,6 +1,108 @@
 POST http://54.91.18.165:8080/api/user
 Accept: application/json
 Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "coba",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T051509.200.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "bene",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T051503.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "bene",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T050825.200.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 53
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testing",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T050759.500.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 53
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testing",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T050727.200.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 49
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "user": "testing",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T050712.200.json
+
+###
+
+POST http://54.91.18.165:8080/api/user
+Accept: application/json
+Content-Type: application/json
 Content-Length: 49
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
