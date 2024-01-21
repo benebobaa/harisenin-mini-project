@@ -5,7 +5,7 @@ Content-Type: application/json
 
 
 ### Ping
-POST http://54.91.18.165:8080/ping
+POST http://54.91.18.165/ping
 Accept: application/json
 Content-Type: application/json
 

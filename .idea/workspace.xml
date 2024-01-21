@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testapi.http" beforeDir="false" afterPath="$PROJECT_DIR$/testapi.http" afterDir="false" />
     </list>
@@ -43,6 +42,7 @@
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
     "HTTP Request.testapi | Localhost.executor": "Run",
+    "HTTP Request.testapi | Ping.executor": "Run",
     "HTTP Request.testapi | Register.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -59,8 +59,11 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="HTTP Request.testapi | Register">
+  <component name="RunManager" selected="HTTP Request.testapi | Ping">
     <configuration name="testapi | Localhost" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" requestIdentifier="Localhost" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="testapi | Ping" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="2" requestIdentifier="Ping" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="testapi | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="2" requestIdentifier="Register" runType="Run single request">
@@ -68,6 +71,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.testapi | Ping" />
         <item itemvalue="HTTP Request.testapi | Register" />
         <item itemvalue="HTTP Request.testapi | Localhost" />
       </list>
