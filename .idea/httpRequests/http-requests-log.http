@@ -1,3 +1,201 @@
+POST http://localhost:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testinglagi",
+  "password": "beneboba"
+}
+
+<> 2024-01-22T142159.200.json
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testinglagi",
+  "password": "beneboba"
+}
+
+<> 2024-01-22T141938.200.json
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "coba",
+  "password": "beneboba"
+}
+
+<> 2024-01-22T141925.500.json
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "coba",
+  "password": "beneboba"
+}
+
+<> 2024-01-22T000220.500.json
+
+###
+
+POST http://tweets.beneboba.me/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-22T000216.200.txt
+
+###
+
+POST http://tweets.beneboba.me/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T230656.200.txt
+
+###
+
+POST http://54.91.18.165/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T230558.200.txt
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "coba",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T230554.500.json
+
+###
+
+POST http://54.91.18.165/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T223551.200.txt
+
+###
+
+POST http://54.91.18.165/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T191502.200.txt
+
+###
+
+POST http://54.91.18.165/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T191458.200.txt
+
+###
+
+POST http://54.91.18.165/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T191455.200.txt
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "coba",
+  "password": "beneboba"
+}
+
+<> 2024-01-21T191119.500.json
+
+###
+
+POST http://54.91.18.165/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-21T191103.200.txt
+
+###
+
 POST http://54.91.18.165:8080/api/user
 Accept: application/json
 Content-Type: application/json

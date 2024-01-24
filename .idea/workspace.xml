@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/build-and-push.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-and-push.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/pull-and-run.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pull-and-run.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/harisenin-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/harisenin-project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.env" beforeDir="false" afterPath="$PROJECT_DIR$/app.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/000001_test_table.down.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/000001_test_table.down.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/000001_test_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/000001_test_table.up.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testapi.http" beforeDir="false" afterPath="$PROJECT_DIR$/testapi.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +57,11 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "DefaultGoTemplateProperty": "Go File",
+    "Go Build.go build github.com/benebobaa/harisenin-mini-project.executor": "Run",
     "HTTP Request.testapi | Localhost.executor": "Run",
+    "HTTP Request.testapi | Ping#2.executor": "Run",
     "HTTP Request.testapi | Ping.executor": "Run",
+    "HTTP Request.testapi | Register#2.executor": "Run",
     "HTTP Request.testapi | Register.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -53,27 +72,41 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "D:/golang bene/harisenin-project",
+    "last_opened_file_path": "/home/bene/harisenin-golang/harisenin-project",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="HTTP Request.testapi | Ping">
-    <configuration name="testapi | Localhost" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" requestIdentifier="Localhost" runType="Run single request">
+  <component name="RunManager" selected="Go Build.go build github.com/benebobaa/harisenin-mini-project">
+    <configuration name="go build github.com/benebobaa/harisenin-mini-project" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="harisenin-project" />
+      <working_directory value="$PROJECT_DIR$" />
+      <kind value="PACKAGE" />
+      <package value="github.com/benebobaa/harisenin-mini-project" />
+      <directory value="$PROJECT_DIR$" />
+      <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
     <configuration name="testapi | Ping" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="2" requestIdentifier="Ping" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="testapi | Ping#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="3" requestIdentifier="Ping#2" runType="Run single request">
+      <method v="2" />
+    </configuration>
     <configuration name="testapi | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="2" requestIdentifier="Register" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="testapi | Register#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="5" requestIdentifier="Register#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.testapi | Ping" />
+        <item itemvalue="Go Build.go build github.com/benebobaa/harisenin-mini-project" />
+        <item itemvalue="HTTP Request.testapi | Register#2" />
         <item itemvalue="HTTP Request.testapi | Register" />
-        <item itemvalue="HTTP Request.testapi | Localhost" />
+        <item itemvalue="HTTP Request.testapi | Ping#2" />
+        <item itemvalue="HTTP Request.testapi | Ping" />
       </list>
     </recent_temporary>
   </component>
