@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/build-and-push.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/build-and-push.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/pull-and-run.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/pull-and-run.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/harisenin-project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/harisenin-project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-client.cookies" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.env" beforeDir="false" afterPath="$PROJECT_DIR$/app.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/000001_test_table.down.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/000001_test_table.down.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/migrations/000001_test_table.up.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db/migrations/000001_test_table.up.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testapi.http" beforeDir="false" afterPath="$PROJECT_DIR$/testapi.http" afterDir="false" />
-    </list>
+    <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
