@@ -97,8 +97,8 @@ func main() {
 	awsRegion := "us-east-1"
 
 	appCreds := credentials.NewStaticCredentialsProvider(
-		"AKIA3P6TUPNEM3ABS3OL",
-		"rgUx0ZOak8vtpsSs2iCZj14ZSySMMQKb+D2rqsdO",
+		"",
+		"+D2rqsdO",
 		"",
 	)
 
