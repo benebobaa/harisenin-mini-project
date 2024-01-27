@@ -1,6 +1,195 @@
 POST http://localhost:8080/api/user
 Accept: application/json
 Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "bebe",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T194731.500.json
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testinglagi",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T194729.500.json
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "test",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T194031.200.json
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testinglagi",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T194019.500.json
+
+###
+
+POST http://tweets.beneboba.me/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-24T194016.200.txt
+
+###
+
+POST http://localhost:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "bebe",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T193625.200.json
+
+###
+
+POST http://localhost:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 50
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "bebe",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T193440.500.json
+
+###
+
+POST http://localhost:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testinglagi",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T193426.500.json
+
+###
+
+POST http://localhost:8080/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testinglagi",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T193416.500.json
+
+###
+
+POST http://54.91.18.165/api/user
+Accept: application/json
+Content-Type: application/json
+Content-Length: 57
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "username": "testinglagi",
+  "password": "beneboba"
+}
+
+<> 2024-01-24T193117.500.json
+
+###
+
+POST http://tweets.beneboba.me/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-24T193109.200.txt
+
+###
+
+POST http://tweets.beneboba.me/ping
+Accept: application/json
+Content-Type: application/json
+Content-Length: 0
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2024-01-24T193055.200.txt
+
+###
+
+POST http://localhost:8080/api/user
+Accept: application/json
+Content-Type: application/json
 Content-Length: 57
 Connection: Keep-Alive
 User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)

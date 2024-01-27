@@ -1,11 +1,13 @@
-package utils
+package util
 
 import "github.com/spf13/viper"
 
 type Config struct {
-	DBDriver      string `mapstructure:"DB_DRIVER"`
-	DBSource      string `mapstructure:"DB_SOURCE"`
-	ServerAddress string `mapstructure:"SERVER_ADDRESS"`
+	PortApp          string `mapstructure:"PORT_APP"`
+	DBDsn            string `mapstructure:"DB_DSN"`
+	AppName          string `mapstructure:"APP_NAME"`
+	GOEnv            string `mapstructure:"GO_ENV"`
+	TokenSymetricKey string `mapstructure:"TOKEN_SYMETRIC_KEY"`
 }
 
 func LoadConfig(path string) (config Config, err error) {

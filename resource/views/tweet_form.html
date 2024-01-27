@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Tweet Form</title>
+    <!-- Include Tailwind CSS via CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <!-- Include htmx via CDN -->
+    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
+</head>
+
+<body class="bg-gray-100">
+<div class="container mx-auto mt-8">
+
+    <h1 class="text-4xl font-bold mb-4">New Tweet</h1>
+
+    <!-- Form to add new tweet -->
+    <form hx-post="/addTweet" hx-target="#postList" class="bg-white p-8 rounded-md shadow-md max-w-md mx-auto">
+        <label for="newTitle" class="block text-sm font-medium text-gray-700">Title:</label>
+        <input type="text" id="newTitle" name="newTitle" required
+               class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+
+        <label for="newContent" class="block mt-4 text-sm font-medium text-gray-700">Content:</label>
+        <textarea id="newContent" name="newContent" required rows="4"
+                  class="mt-1 p-2 border border-gray-300 rounded-md w-full"></textarea>
+
+        <label for="newImage" class="block mt-4 text-sm font-medium text-gray-700">Image:</label>
+        <input type="file" id="newImage" name="newImage" accept="image/*"
+               class="mt-1 p-2 border border-gray-300 rounded-md w-full">
+
+        <button type="submit" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md">Add Tweet</button>
+    </form>
+
+</div>
+</body>
+
+</html>

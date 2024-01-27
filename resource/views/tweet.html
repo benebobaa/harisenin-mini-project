@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
+</head>
+
+<body class="bg-gray-100">
+<div class="container mx-auto mt-8">
+
+    <h1 class="text-4xl font-bold mb-4">Post List</h1>
+
+    <a href="/tweets/form" class="fixed bottom-16 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white p-4 rounded-full shadow-md text-xl">
+        Add Tweet
+    </a>
+
+    {{if .Error}}
+    <div class="max-w-2xl mx-auto bg-red-500 text-white rounded-md p-4 mb-4">
+        {{.Error}}
+    </div>
+    {{end}}
+
+    {{range .Tweets}}
+    <div class="max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-md mb-4">
+        <img src="https://via.placeholder.com/800x400" alt="Placeholder Image"
+             class="w-full h-48 object-cover">
+        <div class="p-4">
+<!--            <h5 class="text-lg font-bold mb-2"><strong>ID:</strong> {{.ID}}</h5>-->
+            <h5 class="text-xl font-bold mb-2"><strong>Title:</strong> {{.Title}}</h5>
+            <p class="text-gray-700 mb-4"><strong>Content:</strong> {{.Content}}</p>
+            <strong>Comments:</strong>
+            <ul class="list-disc ml-6">
+                {{range .Comment}}
+                <li class="mb-1">
+                    {{.Comment}}
+                    <span class="text-gray-500"> - Rating: {{.Rate}}</span>
+                </li>
+                {{end}}
+            </ul>
+        </div>
+        <div class="p-4 bg-gray-200 flex justify-between items-center">
+            <span class="text-lg font-semibold text-gray-700">Total Points: {{.TotalPoints}}</span>
+        </div>
+
+        <!-- Comment Form -->
+        <form action="/tweets/comment/{{.ID}}" method="post" class="p-4 bg-gray-100 flex space-x-2 items-center">
+            <input type="text" name="comment" required placeholder="Add a comment..."
+                   class="flex-1 p-2 border border-gray-300 rounded-md">
+
+            <input type="number" name="rate" required placeholder="Rate (1-5)"
+                   class="p-2 border border-gray-300 rounded-md w-16">
+
+            <button type="submit" class="p-2 bg-blue-500 text-white rounded-md">Add Comment</button>
+        </form>
+
+    </div>
+    {{end}}
+
+</div>
+</body>
+
+</html>

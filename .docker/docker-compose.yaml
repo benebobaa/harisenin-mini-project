@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+  motivational-quote:
+    image: simple-project/motivational-quote:0.1.0
+    platform: linux/amd64
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    environment:
+      - PORT_APP=8080
+      - DB_DSN=host=postgres user=root password=secret dbname=motivational_quote port=5432
+      - APP_NAME=motivational-quote
+      - GO_ENV=DEV
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+
+    
+  postgres:
+    image: postgres:16-alpine3.18
+    environment:
+      POSTGRES_DB: motivational_quote
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: secret
+      POSTGRES_SSL_MODE: disable
+    ports:
+      - 54322:5432
+    volumes:
+      - pg-data-quote:/var/lib/postgresql/data
+
+volumes:
+  pg-data-quote:

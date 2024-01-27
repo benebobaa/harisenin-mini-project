@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="" />
+    <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/http-requests-log.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.env" beforeDir="false" afterPath="$PROJECT_DIR$/app.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/000001_test_table.down.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/000001_test_table.up.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/000002_tweet_table.down.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/migrations/000002_tweet_table.up.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helper/error.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testapi.http" beforeDir="false" afterPath="$PROJECT_DIR$/testapi.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/config.go" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +57,7 @@
     "HTTP Request.testapi | Localhost.executor": "Run",
     "HTTP Request.testapi | Ping#2.executor": "Run",
     "HTTP Request.testapi | Ping.executor": "Run",
+    "HTTP Request.testapi | Register#1.executor": "Run",
     "HTTP Request.testapi | Register#2.executor": "Run",
     "HTTP Request.testapi | Register.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -53,12 +69,19 @@
     "git-widget-placeholder": "main",
     "go.import.settings.migrated": "true",
     "go.sdk.automatically.set": "true",
-    "last_opened_file_path": "/home/bene/harisenin-golang/harisenin-project",
+    "last_opened_file_path": "/home/bene/harisenin-golang/harisenin-project/shared/util",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/shared/util" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager" selected="Go Build.go build github.com/benebobaa/harisenin-mini-project">
     <configuration name="go build github.com/benebobaa/harisenin-mini-project" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="harisenin-project" />
@@ -69,13 +92,13 @@
       <filePath value="$PROJECT_DIR$/main.go" />
       <method v="2" />
     </configuration>
-    <configuration name="testapi | Ping" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="2" requestIdentifier="Ping" runType="Run single request">
-      <method v="2" />
-    </configuration>
     <configuration name="testapi | Ping#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="3" requestIdentifier="Ping#2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="testapi | Register" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="2" requestIdentifier="Register" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="testapi | Register#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="4" requestIdentifier="Register#1" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="testapi | Register#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/testapi.http" index="5" requestIdentifier="Register#2" runType="Run single request">
@@ -85,9 +108,9 @@
       <list>
         <item itemvalue="Go Build.go build github.com/benebobaa/harisenin-mini-project" />
         <item itemvalue="HTTP Request.testapi | Register#2" />
-        <item itemvalue="HTTP Request.testapi | Register" />
+        <item itemvalue="HTTP Request.testapi | Register#1" />
         <item itemvalue="HTTP Request.testapi | Ping#2" />
-        <item itemvalue="HTTP Request.testapi | Ping" />
+        <item itemvalue="HTTP Request.testapi | Register" />
       </list>
     </recent_temporary>
   </component>
