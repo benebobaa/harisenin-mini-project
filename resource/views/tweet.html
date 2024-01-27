@@ -4,34 +4,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Post List</title>
+    <title>Harisenin Feeds</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
+    <style>
+        /* Add custom styles here */
+        body {
+            transition: background-color 0.3s ease;
+        }
+
+        .container {
+            transition: transform 0.3s ease;
+        }
+
+        .post-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .comment-form input,
+        .comment-form button {
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .comment-form input:focus,
+        .comment-form button:hover {
+            background-color: #4a90e2;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
-<body class="bg-gray-100">
-<div class="container mx-auto mt-8">
+<body class="bg-gray-100 transition">
+<div class="container mx-auto mt-8 transition">
 
-    <h1 class="text-4xl font-bold mb-4">Post List</h1>
+    <h1 class="text-4xl font-bold mb-4">Harisenin Feeds</h1>
 
-    <a href="/tweets/form" class="fixed bottom-16 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white p-4 rounded-full shadow-md text-xl">
+    <a href="/tweets/form" class="fixed bottom-16 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white p-4 rounded-full shadow-md text-xl transition">
         Add Tweet
     </a>
 
     {{if .Error}}
-    <div class="max-w-2xl mx-auto bg-red-500 text-white rounded-md p-4 mb-4">
+    <div class="max-w-2xl mx-auto bg-red-500 text-white rounded-md p-4 mb-4 transition">
         {{.Error}}
     </div>
     {{end}}
 
     {{range .Tweets}}
-    <div class="max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-md mb-4">
+    <div class="max-w-2xl mx-auto bg-white rounded-md overflow-hidden shadow-md mb-4 post-card transition">
         <img src="https://via.placeholder.com/800x400" alt="Placeholder Image"
              class="w-full h-48 object-cover">
+
         <div class="p-4">
-<!--            <h5 class="text-lg font-bold mb-2"><strong>ID:</strong> {{.ID}}</h5>-->
             <h5 class="text-xl font-bold mb-2"><strong>Title:</strong> {{.Title}}</h5>
             <p class="text-gray-700 mb-4"><strong>Content:</strong> {{.Content}}</p>
+
             <strong>Comments:</strong>
             <ul class="list-disc ml-6">
                 {{range .Comment}}
@@ -42,21 +73,21 @@
                 {{end}}
             </ul>
         </div>
+
         <div class="p-4 bg-gray-200 flex justify-between items-center">
             <span class="text-lg font-semibold text-gray-700">Total Points: {{.TotalPoints}}</span>
         </div>
 
         <!-- Comment Form -->
-        <form action="/tweets/comment/{{.ID}}" method="post" class="p-4 bg-gray-100 flex space-x-2 items-center">
+        <form action="/tweets/comment/{{.ID}}" method="post" class="p-4 bg-gray-100 flex space-x-2 items-center comment-form transition">
             <input type="text" name="comment" required placeholder="Add a comment..."
-                   class="flex-1 p-2 border border-gray-300 rounded-md">
+                   class="flex-1 p-2 border border-gray-300 rounded-md transition">
 
             <input type="number" name="rate" required placeholder="Rate (1-5)"
-                   class="p-2 border border-gray-300 rounded-md w-16">
+                   class="p-2 border border-gray-300 rounded-md w-16 transition">
 
-            <button type="submit" class="p-2 bg-blue-500 text-white rounded-md">Add Comment</button>
+            <button type="submit" class="p-2 bg-blue-500 text-white rounded-md transition">Add Comment</button>
         </form>
-
     </div>
     {{end}}
 

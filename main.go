@@ -18,9 +18,6 @@ var resourcefs embed.FS
 func main() {
 	config, err := util.LoadConfig(".")
 	validate := validator.New()
-	if err != nil {
-		return
-	}
 
 	domain := domain.ConstructDomain(config, validate)
 	engine := html.NewFileSystem(httpLib.FS(resourcefs), ".html")
