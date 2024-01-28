@@ -77,7 +77,8 @@ Make sure you have Golang installed on your machine.
 
 ## <div align="center">Deployment</div>
 
-Deploy GoTweet on your preferred server or platform to make it accessible globally.
+Deploy GoTweet on your preferred server or platform to make it accessible globally. The live version can be accessed [here](http://tweets.beneboba.me:8080).
+
 
 ## <div align="center">Contributing</div>
 
