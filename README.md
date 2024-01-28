@@ -1,59 +1,31 @@
-# My Awesome Project
+<div align="center">GoTweet - A Minimalist Social Media Platform</div>
+GoTweet is a lightweight social media platform inspired by Twitter, designed for simplicity and efficiency. Users can read and post tweets, engage with the community, comment and rate tweets, and stay updated on the latest feeds. The platform is built using Golang with the Fiber v2 framework, Gorm for database interactions, and features JWT token-based authentication. The minimalist design ensures a seamless user experience, and HTML template engine is employed for rendering views.
 
-Welcome to My Awesome Project! This is a simple web application that does something amazing.
+<div align="center">Features</div>
+User Authentication: Secure user authentication powered by JWT tokens ensures a safe and private experience.
 
-## Tech Stack
+Tweet Feeds: Browse through a clean and clutter-free timeline of tweets, allowing users to stay connected with the community.
 
-- **Frontend:** React
-- **Backend:** Node.js with Express
-- **Database:** MongoDB
+Tweet Creation: Post tweets and share your thoughts with the world. The platform enables users to express themselves with ease.
 
-## Getting Started
+Tweet Comments and Ratings: Engage in conversations by commenting on tweets and providing ratings. Each tweet accumulates points based on user ratings.
 
-Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
+Account Management: Create a new account or log in to an existing one. Manage your profile and stay in control of your account.
 
-### Prerequisites
+Minimalist Design: The user interface is designed to be minimalistic, providing a focused and distraction-free environment.
 
-Make sure you have Node.js and npm installed on your machine.
+<div align="center">Tech Stack</div>
+Backend: Golang, Fiber v2, Gorm (for database interactions)
 
-### Installation
+Authentication: JWT Token-based authentication
 
-1. Clone the repository:
+Frontend: HTML template engine (for minimalist and efficient views)
 
-    ```bash
-    git clone https://github.com/your-username/my-awesome-project.git
-    cd my-awesome-project
-    ```
+## <div align="center">Deployment</div>
 
-2. Install dependencies:
+This project is deployed on AWS. The live version can be accessed at [http://tweets.beneboba.me:8080](http://tweets.beneboba.me:8080).
 
-    ```bash
-    npm install
-    ```
-
-### Running the App Locally
-
-1. Start the backend server:
-
-    ```bash
-    npm run start:server
-    ```
-
-   The server will be running on http://localhost:3001.
-
-2. Start the frontend:
-
-    ```bash
-    npm run start:client
-    ```
-
-   The React app will be accessible at http://localhost:3000.
-
-## Deployment
-
-This project is deployed on Heroku. The live version can be accessed at [https://my-awesome-project.herokuapp.com](https://my-awesome-project.herokuapp.com).
-
-## Contributing
+## <div align="center">Contributing</div>
 
 Feel free to contribute to this project by following these steps:
 
@@ -63,11 +35,11 @@ Feel free to contribute to this project by following these steps:
 4. Push your changes to your fork.
 5. Submit a pull request.
 
-## License
+## <div align="center">License</div>
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Acknowledgments
+## <div align="center">Acknowledgments</div>
 
 - Hat tip to anyone whose code was used
 - Inspiration
