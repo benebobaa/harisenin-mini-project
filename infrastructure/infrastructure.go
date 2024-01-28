@@ -14,7 +14,7 @@ func NewDatabaseConnection(dsn string) *gorm.DB {
 		log.Fatal(err)
 	}
 
-	if err := db.AutoMigrate(&entity.Quote{}, &entity.Post{}, &entity.Comment{}); err != nil {
+	if err := db.AutoMigrate(&entity.User{}, &entity.Post{}, &entity.Comment{}); err != nil {
 		log.Fatal(err)
 	}
 

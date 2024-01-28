@@ -22,7 +22,7 @@ func NewTweetRepository(database *gorm.DB) tweetRepositoryImpl {
 
 func (t tweetRepositoryImpl) FindAll(data any, conditions ...any) error {
 	//result := t.database.Find(data, conditions...)
-	result := t.database.Preload("Comment").Order("created_at desc").Find(data, conditions...)
+	result := t.database.Preload("User").Preload("Comment.User").Order("created_at desc").Find(data, conditions...)
 
 	if result.Error != nil {
 		log.Println(fmt.Sprintf("error fetching tweet:: %v", result.Error))

@@ -5,29 +5,35 @@ import (
 	"github.com/benebobaa/harisenin-mini-project/domain/usecase"
 	"github.com/benebobaa/harisenin-mini-project/infrastructure"
 	"github.com/benebobaa/harisenin-mini-project/shared/util"
+	"github.com/benebobaa/harisenin-mini-project/shared/util/token"
 	"github.com/go-playground/validator/v10"
+	"github.com/gofiber/fiber/v2/middleware/session"
 )
 
 type Domain struct {
 	Validate     *validator.Validate
-	QuoteUsecase usecase.QuoteUsecase
+	TokenMaker   token.Maker
+	Store        *session.Store
 	TweetUsecase usecase.TweetUsecase
+	AuthUsecase  usecase.AuthUsecase
 }
 
-func ConstructDomain(c util.Config, validate *validator.Validate) Domain {
+func ConstructDomain(c util.Config, validate *validator.Validate, tokenMaker token.Maker, store *session.Store) Domain {
 	databaseConn := infrastructure.NewDatabaseConnection(c.DBDsn)
 
 	//Repository
-	databaseRepository := repository.NewDatabaseRepository(databaseConn)
 	tweetRepository := repository.NewTweetRepository(databaseConn)
+	authRepository := repository.NewAuthRepository(databaseConn)
 
 	//Usecase
-	quoteUsecase := usecase.NewQuoteUsecase(databaseRepository)
 	tweetUsecase := usecase.NewTweetUsecase(tweetRepository)
+	authUsecase := usecase.NewAuthUsecase(authRepository)
 
 	return Domain{
-		QuoteUsecase: &quoteUsecase,
-		TweetUsecase: &tweetUsecase,
 		Validate:     validate,
+		TokenMaker:   tokenMaker,
+		Store:        store,
+		TweetUsecase: &tweetUsecase,
+		AuthUsecase:  &authUsecase,
 	}
 }

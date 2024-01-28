@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/benebobaa/harisenin-mini-project/delivery/http/dto/request"
 	"github.com/benebobaa/harisenin-mini-project/delivery/http/dto/response"
+	"github.com/benebobaa/harisenin-mini-project/delivery/http/middleware"
 	"github.com/benebobaa/harisenin-mini-project/domain"
 	"github.com/benebobaa/harisenin-mini-project/shared/util"
 	"github.com/gofiber/fiber/v2"
@@ -26,6 +27,11 @@ func NewTweetController(domain domain.Domain) tweetControllerImpl {
 }
 
 func (t *tweetControllerImpl) FindAllTweet(ctx *fiber.Ctx) error {
+
+	ses, err := t.domain.Store.Get(ctx)
+	payloadID := ses.Get(middleware.AuthorizationPayloadKey)
+	fmt.Println("payload sess", payloadID)
+
 	tweets, err := t.domain.TweetUsecase.FindAllTweet()
 
 	if err != nil {
@@ -33,16 +39,27 @@ func (t *tweetControllerImpl) FindAllTweet(ctx *fiber.Ctx) error {
 		return ctx.Status(statusCode).JSON(resp)
 	}
 
-	tweetResponse := response.NewTweetResponse(tweets)
+	tweetResponses := response.NewTweetResponses(tweets)
 
-	fmt.Println(tweetResponse)
-	return ctx.Render("resource/views/tweet", fiber.Map{
-		"Tweets": tweetResponse,
+	for _, tweet := range tweetResponses {
+		fmt.Println("tweet", tweet.Title)
+		for _, c := range tweet.Comment {
+			fmt.Println("comment", c.User.Username)
+		}
+	}
+	return ctx.Render("resource/views/home", fiber.Map{
+		"Tweets": tweetResponses,
 	})
 }
 
 func (t *tweetControllerImpl) CreateTweet(ctx *fiber.Ctx) error {
+	ses, _ := t.domain.Store.Get(ctx)
+	payloadID := ses.Get(middleware.AuthorizationPayloadKey)
+	fmt.Println("payload sess", payloadID)
+
 	var tweet request.TweetRequestDTO
+	tweet.UserID = payloadID.(string)
+
 	if err := ctx.BodyParser(&tweet); err != nil {
 		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid request body")
 		return ctx.Status(statusCode).JSON(resp)
@@ -58,15 +75,21 @@ func (t *tweetControllerImpl) CreateTweet(ctx *fiber.Ctx) error {
 		return ctx.Status(statusCode).JSON(resp)
 	}
 
-	return ctx.Redirect("/tweets")
+	return ctx.Redirect("/")
 }
 
 func (t *tweetControllerImpl) CommentTweet(ctx *fiber.Ctx) error {
+	ses, _ := t.domain.Store.Get(ctx)
+	payloadID := ses.Get(middleware.AuthorizationPayloadKey)
+	fmt.Println("payload sess", payloadID)
+
 	var comment request.CommentRequestDTO
+	comment.UserID = payloadID.(string)
+
 	postId := ctx.Params("post_id")
 	if err := ctx.BodyParser(&comment); err != nil {
 		resp, _ := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid request body")
-		return ctx.Render("resource/views/tweet", fiber.Map{
+		return ctx.Render("resource/views/home", fiber.Map{
 			"Error": resp,
 		})
 	}
@@ -75,7 +98,7 @@ func (t *tweetControllerImpl) CommentTweet(ctx *fiber.Ctx) error {
 
 	if err := t.domain.Validate.Struct(comment); err != nil {
 		resp, _ := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid request body")
-		return ctx.Render("resource/views/tweet", fiber.Map{
+		return ctx.Render("resource/views/home", fiber.Map{
 			"Error": resp,
 		})
 	}
@@ -85,13 +108,17 @@ func (t *tweetControllerImpl) CommentTweet(ctx *fiber.Ctx) error {
 		return ctx.Status(statusCode).JSON(resp)
 	}
 
-	return ctx.Redirect("/tweets")
+	return ctx.Redirect("/")
 }
 
 func (t *tweetControllerImpl) FormTweet(ctx *fiber.Ctx) error {
+	ses, _ := t.domain.Store.Get(ctx)
+	payloadID := ses.Get(middleware.AuthorizationPayloadKey)
+	fmt.Println("payload sess", payloadID)
+
 	return ctx.Render("resource/views/tweet_form", nil)
 }
 
 func (t *tweetControllerImpl) CloseFormTweet(ctx *fiber.Ctx) error {
-	return ctx.Redirect("/tweets")
+	return ctx.Redirect("/")
 }
