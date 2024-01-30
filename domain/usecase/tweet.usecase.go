@@ -9,6 +9,7 @@ type TweetUsecase interface {
 	FindAllTweet() ([]*entity.Post, error)
 	CreateTweet(action entity.Post) error
 	CommentTweet(action entity.Comment) error
+	SaveImage(action entity.Image) error
 }
 
 type tweetUsecaseImpl struct {
@@ -44,4 +45,9 @@ func (t *tweetUsecaseImpl) CommentTweet(action entity.Comment) error {
 	}
 
 	return nil
+}
+
+func (t *tweetUsecaseImpl) SaveImage(action entity.Image) error {
+	//TODO implement me
+	panic("implement me")
 }

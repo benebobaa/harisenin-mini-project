@@ -12,6 +12,7 @@ type TweetResponse struct {
 	User        entity.User      `json:"user"`
 	Title       string           ` json:"title"`
 	Content     string           `json:"content"`
+	Image       entity.Image     `json:"image"`
 	Comment     []entity.Comment `json:"comment"`
 	TotalPoints int              `json:"total_points"`
 	CreatedAt   time.Time        `json:"-"`
@@ -34,6 +35,7 @@ func NewTweetResponses(tweets []*entity.Post) []TweetResponse {
 			User:        tweet.User,
 			Title:       tweet.Title,
 			Content:     tweet.Content,
+			Image:       tweet.Image,
 			Comment:     tweet.Comment,
 			TotalPoints: totalPoints,
 			CreatedAt:   tweet.CreatedAt,

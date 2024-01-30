@@ -41,18 +41,13 @@ func (t *tweetControllerImpl) FindAllTweet(ctx *fiber.Ctx) error {
 
 	tweetResponses := response.NewTweetResponses(tweets)
 
-	for _, tweet := range tweetResponses {
-		fmt.Println("tweet", tweet.Title)
-		for _, c := range tweet.Comment {
-			fmt.Println("comment", c.User.Username)
-		}
-	}
 	return ctx.Render("resource/views/home", fiber.Map{
 		"Tweets": tweetResponses,
 	})
 }
 
 func (t *tweetControllerImpl) CreateTweet(ctx *fiber.Ctx) error {
+
 	ses, _ := t.domain.Store.Get(ctx)
 	payloadID := ses.Get(middleware.AuthorizationPayloadKey)
 	fmt.Println("payload sess", payloadID)
@@ -70,7 +65,23 @@ func (t *tweetControllerImpl) CreateTweet(ctx *fiber.Ctx) error {
 		return ctx.Status(statusCode).JSON(resp)
 	}
 
-	if err := t.domain.TweetUsecase.CreateTweet(tweet.ToTweetEntity()); err != nil {
+	fileImage, err := ctx.FormFile("newImage")
+	//fmt.Println("fileImage", fileImage)
+
+	if err != nil {
+		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid file upload")
+		return ctx.Status(statusCode).JSON(resp)
+	}
+
+	imageEntity, err := t.domain.AwsS3.UploadFile(fileImage)
+
+	fmt.Println("ERROR UPLOAD", err)
+	if err != nil {
+		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid file upload")
+		return ctx.Status(statusCode).JSON(resp)
+	}
+
+	if err := t.domain.TweetUsecase.CreateTweet(tweet.ToTweetEntity(imageEntity)); err != nil {
 		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Failed to save tweet")
 		return ctx.Status(statusCode).JSON(resp)
 	}

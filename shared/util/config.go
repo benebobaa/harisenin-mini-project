@@ -8,6 +8,10 @@ type Config struct {
 	AppName          string `mapstructure:"APP_NAME"`
 	GOEnv            string `mapstructure:"GO_ENV"`
 	TokenSymetricKey string `mapstructure:"TOKEN_SYMETRIC_KEY"`
+	AWSRegion        string `mapstructure:"AWS_REGION"`
+	AWSS3Bucket      string `mapstructure:"AWS_S3_BUCKET"`
+	AWSAccessKey     string `mapstructure:"AWS_ACCESS_KEY"`
+	AWSSecretKey     string `mapstructure:"AWS_SECRET_KEY"`
 }
 
 func LoadConfig(path string) (config Config, err error) {

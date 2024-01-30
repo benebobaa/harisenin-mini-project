@@ -12,12 +12,19 @@ type TweetRequestDTO struct {
 	Content string `json:"content" validate:"required"`
 }
 
-func (this TweetRequestDTO) ToTweetEntity() entity.Post {
+func (this TweetRequestDTO) ToTweetEntity(imageEntity entity.Image) entity.Post {
 	return entity.Post{
-		ID:        uuid.New(),
-		Title:     this.Title,
-		Content:   this.Content,
-		UserID:    this.UserID,
+		ID:      uuid.New(),
+		Title:   this.Title,
+		Content: this.Content,
+		UserID:  this.UserID,
+		Image: entity.Image{
+			ID:        uuid.New(),
+			PostID:    imageEntity.PostID,
+			ImageType: imageEntity.ImageType,
+			ImageUrl:  imageEntity.ImageUrl,
+			CreatedAt: time.Now(),
+		},
 		CreatedAt: time.Now(),
 	}
 
