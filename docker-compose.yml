@@ -15,7 +15,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
-      - "80:80"
     environment:
       - DB_SOURCE=postgres://root:root@postgres:5432/harisenin_project?sslmode=disable
     depends_on:
