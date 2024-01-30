@@ -1,6 +1,6 @@
 # <div align="center">GoTweet - A Minimalist Social Media Platform</div>
 
-[GoTweet](http://tweets.beneboba.me:8080) is a lightweight social media platform inspired by Twitter, designed for simplicity and efficiency. Users can read and post tweets, engage with the community, comment and rate tweets, and stay updated on the latest feeds. The platform is built using Golang with the Fiber v2 framework, Gorm for database interactions, and features JWT token-based authentication. The minimalist design ensures a seamless user experience, and HTML template engine is employed for rendering views.
+[GoTweet (Deployed)](http://tweets.beneboba.me:8080) is a lightweight social media platform inspired by Twitter, designed for simplicity and efficiency. Users can read and post tweets, engage with the community, comment and rate tweets, and stay updated on the latest feeds. The platform is built using Golang with the Fiber v2 framework, Gorm for database interactions, and features JWT token-based authentication. The minimalist design ensures a seamless user experience, and HTML template engine is employed for rendering views.
 
 ## <div align="center">Features</div>
 
