@@ -29,7 +29,7 @@ type Comment struct {
 
 type User struct {
 	ID       uuid.UUID `gorm:"column:id" json:"user_id"`
-	Username string    `gorm:"column:username;unique;not null" json:"username"`
+	Username string    `gorm:"column:username" json:"username"`
 	Password string    `gorm:"column:password" json:"-"`
 }
 

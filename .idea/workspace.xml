@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="" />
+    <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/domain/entity/db.entity.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/entity/db.entity.go" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
