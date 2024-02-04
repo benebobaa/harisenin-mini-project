@@ -17,6 +17,11 @@ services:
       - "8080:8080"
     environment:
       - DB_SOURCE=postgres://root:root@postgres:5432/harisenin_project?sslmode=disable
+      - PORT_APP=8080
+      - DB_DSN=host=postgres user=root password=secret dbname=motivational_quote port=5432
+      - APP_NAME=Beneboba-Tweets
+      - TOKEN_SYMETRIC_KEY=msfwvvokev71979lkfoqjipld97802jw
+      - GO_ENV=production
     depends_on:
       - postgres
     entrypoint: ["/app/wait-for.sh", "postgres:5432", "--", "/app/start.sh"]

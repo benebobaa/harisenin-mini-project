@@ -2,7 +2,6 @@
 
 set -e
 
-echo "run db migrations"
 
 source /app/app.env
 
