@@ -8,6 +8,7 @@ import (
 	"github.com/benebobaa/harisenin-mini-project/domain"
 	"github.com/benebobaa/harisenin-mini-project/shared/util"
 	"github.com/gofiber/fiber/v2"
+	"log"
 )
 
 type TweetController interface {
@@ -28,9 +29,24 @@ func NewTweetController(domain domain.Domain) tweetControllerImpl {
 
 func (t *tweetControllerImpl) FindAllTweet(ctx *fiber.Ctx) error {
 
+	var usernameUser string
+
 	ses, err := t.domain.Store.Get(ctx)
-	payloadID := ses.Get(middleware.AuthorizationPayloadKey)
-	fmt.Println("payload sess", payloadID)
+	payload := ses.Get(middleware.AuthorizationPayloadKey)
+
+	fmt.Println("PAYLOAD", payload)
+	if payload != nil {
+		usernameAndId, err := util.FromStringToUsernameAndUUID(payload.(string))
+
+		if err != nil {
+			resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Failed to fetch tweet")
+			return ctx.Status(statusCode).JSON(resp)
+		}
+
+		usernameUser = usernameAndId.Username
+
+		log.Printf("username n id controller %s - %s", usernameAndId.Username, usernameAndId.UserID)
+	}
 
 	tweets, err := t.domain.TweetUsecase.FindAllTweet()
 
@@ -41,8 +57,10 @@ func (t *tweetControllerImpl) FindAllTweet(ctx *fiber.Ctx) error {
 
 	tweetResponses := response.NewTweetResponses(tweets)
 
+	log.Printf("username %s", usernameUser)
 	return ctx.Render("resource/views/home", fiber.Map{
-		"Tweets": tweetResponses,
+		"Tweets":   tweetResponses,
+		"Username": usernameUser,
 	})
 }
 

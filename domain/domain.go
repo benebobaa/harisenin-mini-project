@@ -1,7 +1,6 @@
 package domain
 
 import (
-	awsSess "github.com/aws/aws-sdk-go/aws/session"
 	"github.com/benebobaa/harisenin-mini-project/domain/repository"
 	"github.com/benebobaa/harisenin-mini-project/domain/usecase"
 	"github.com/benebobaa/harisenin-mini-project/infrastructure"
@@ -16,14 +15,13 @@ type Domain struct {
 	Validate     *validator.Validate
 	TokenMaker   token.Maker
 	Store        *session.Store
-	AwsS3        *upload_image.AwsS3
+	AwsS3        upload_image.AwsS3Action
 	TweetUsecase usecase.TweetUsecase
 	AuthUsecase  usecase.AuthUsecase
 }
 
-func ConstructDomain(c util.Config, validate *validator.Validate, tokenMaker token.Maker, store *session.Store, awsSession *awsSess.Session) Domain {
+func ConstructDomain(c util.Config, validate *validator.Validate, tokenMaker token.Maker, store *session.Store, awsS3 upload_image.AwsS3Action) Domain {
 	databaseConn := infrastructure.NewDatabaseConnection(c.DBDsn)
-	aws := upload_image.NewAwsS3(awsSession, c.AWSS3Bucket)
 
 	//Repository
 	tweetRepository := repository.NewTweetRepository(databaseConn)
@@ -37,7 +35,7 @@ func ConstructDomain(c util.Config, validate *validator.Validate, tokenMaker tok
 		Validate:     validate,
 		TokenMaker:   tokenMaker,
 		Store:        store,
-		AwsS3:        aws,
+		AwsS3:        awsS3,
 		TweetUsecase: &tweetUsecase,
 		AuthUsecase:  &authUsecase,
 	}

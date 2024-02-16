@@ -1,11 +1,11 @@
 package middleware
 
 import (
-	"fmt"
 	"github.com/benebobaa/harisenin-mini-project/shared/util"
 	"github.com/benebobaa/harisenin-mini-project/shared/util/token"
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/session"
+	"log"
 	"net/http"
 )
 
@@ -17,14 +17,17 @@ const (
 func AuthMiddleware(tokenMaker token.Maker, store *session.Store) fiber.Handler {
 	return func(ctx *fiber.Ctx) error {
 
-		if ctx.Path() == "/" {
-			return ctx.Next()
-		}
-
 		// Get the session
 		sess, _ := store.Get(ctx)
+		log.Println("sesion", sess)
 
 		accessToken := sess.Get(AuthorizationHeaderKey)
+
+		log.Println("acc token", accessToken)
+
+		if ctx.Path() == "/" && accessToken == nil {
+			return ctx.Next()
+		}
 		if accessToken != nil {
 
 			payload, err := tokenMaker.VerifyToken(accessToken.(string))
@@ -34,7 +37,9 @@ func AuthMiddleware(tokenMaker token.Maker, store *session.Store) fiber.Handler 
 				return ctx.Status(code).JSON(res)
 			}
 
-			sess.Set(AuthorizationPayloadKey, fmt.Sprintf("%v", payload.UUID))
+			payloadString := util.FromUsernameAndUUIDToString(payload.Username, payload.UUID)
+
+			sess.Set(AuthorizationPayloadKey, payloadString)
 			sess.Save()
 			return ctx.Next()
 		}

@@ -15,6 +15,7 @@ type AuthController interface {
 	Register(ctx *fiber.Ctx) error
 	SubmitLogin(ctx *fiber.Ctx) error
 	SubmitRegister(ctx *fiber.Ctx) error
+	Logout(ctx *fiber.Ctx) error
 }
 
 type authControllerImpl struct {
@@ -84,4 +85,14 @@ func (a *authControllerImpl) SubmitRegister(ctx *fiber.Ctx) error {
 	}
 
 	return ctx.Redirect("/login")
+}
+
+func (a *authControllerImpl) Logout(ctx *fiber.Ctx) error {
+
+	sess, _ := a.domain.Store.Get(ctx)
+	sess.Set(middleware.AuthorizationHeaderKey, nil)
+	sess.Set(middleware.AuthorizationPayloadKey, nil)
+	sess.Save()
+
+	return ctx.Redirect("/")
 }

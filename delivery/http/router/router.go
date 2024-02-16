@@ -17,6 +17,7 @@ func NewRouter(app *fiber.App, domain domain.Domain) {
 	app.Get("/register", authController.Register)
 	app.Post("/login", authController.SubmitLogin)
 	app.Post("/register", authController.SubmitRegister)
+	app.Get("/logout", authController.Logout)
 
 	//Group Middleware
 	home := app.Group("", middleware.AuthMiddleware(domain.TokenMaker, domain.Store))

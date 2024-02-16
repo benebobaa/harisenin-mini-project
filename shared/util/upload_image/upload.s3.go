@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"fmt"
 	"github.com/aws/aws-sdk-go/aws"
-	awsSess "github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/benebobaa/harisenin-mini-project/domain/entity"
 	"github.com/nfnt/resize"
@@ -16,16 +15,16 @@ import (
 )
 
 type AwsS3 struct {
-	Session   *awsSess.Session
+	S3        *s3.S3
 	AwsBucket string
 }
 
-func NewAwsS3(session *awsSess.Session, awsBucket string) *AwsS3 {
-	return &AwsS3{Session: session, AwsBucket: awsBucket}
+func NewAwsS3(s3 *s3.S3, awsBucket string) AwsS3Action {
+	return &AwsS3{S3: s3, AwsBucket: awsBucket}
 }
 
-type AwsS3File interface {
-	UploadFile(file []byte, fileName string) (string, error)
+type AwsS3Action interface {
+	UploadFile(file *multipart.FileHeader) (entity.Image, error)
 	//ValidateImageType(contentType string) bool
 }
 
@@ -64,7 +63,7 @@ func (a *AwsS3) UploadFile(file *multipart.FileHeader) (entity.Image, error) {
 	fileReader := bytes.NewReader(resizedBytes)
 
 	// Upload the resized file to S3
-	_, err = s3.New(a.Session).PutObject(&s3.PutObjectInput{
+	_, err = a.S3.PutObject(&s3.PutObjectInput{
 		Bucket:        aws.String(a.AwsBucket),
 		Key:           aws.String(objectKey),
 		ACL:           aws.String("public-read"),

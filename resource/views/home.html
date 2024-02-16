@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Harisenin Feeds</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>
+<!--    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.js"></script>-->
     <style>
         /* Add custom styles here */
         body {
@@ -56,13 +56,90 @@
             background-color: #1565C0; /* Change to your desired hover background color */
             transform: scale(1.05);
         }
+
+        /*.profile-avatar-container {*/
+        /*    position: fixed;*/
+        /*    top: 16px;*/
+        /*    right: 16px;*/
+        /*    z-index: 1000; !* Ensure the avatar appears above other elements *!*/
+        /*}*/
+
     </style>
 </head>
 
 <body class="bg-gray-100 transition">
-<div class="container mx-auto mt-8 transition">
+<div class="container mx-auto mt-8 transition" id="tweets">
 
-    <h1 class="text-4xl font-bold mb-4">Harisenin Feeds</h1>
+    <div class="flex items-center justify-between">
+        <h1 class="text-4xl font-bold mb-4 ml-2">Harisenin Feeds</h1>
+
+        {{if .Username}}
+        <div id="avatarDropdown" class=" top-2 z-50 mb-4 mr-6">
+
+
+            <!-- Clickable Avatar -->
+            <div>
+                <img class="h-12 w-12 rounded-full cursor-pointer" src="https://tweets-harisenin-bucket.s3.amazonaws.com/uploads/%E2%80%94Pngtree%E2%80%94user+avatar+placeholder_6796225.png" alt="Avatar" id="avatarImage">
+            </div>
+
+            <!-- Dropdown Content -->
+            <div id="dropdownContent" class="hidden origin-top-right absolute right-0 mt-2 mr-4 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div class="py-1" role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                    <p class="block px-4 py-2 text-sm text-gray-700" role="menuitem">@{{ .Username }}</p>
+                    <button id="logoutButton" class="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">Logout</button>
+                </div>
+            </div>
+
+
+        </div>
+        {{else}}
+        <a href="/login" id="loginButton" class="block rounded-lg  mr-4 px-4 py-2 text-sm text-white bg-blue-500 hover:bg-blue-600 font-bold" role="button">Login </a>
+        {{end}}
+
+    </div>
+
+    <!-- Avatar Container -->
+    <script>
+
+        setTimeout(function () {
+            document.getElementById('tweets').classList.remove('hidden')
+        }, 100 )
+
+        // JavaScript to handle dropdown functionality
+        document.getElementById('avatarImage').addEventListener('click', function () {
+            var dropdown = document.getElementById('dropdownContent');
+            dropdown.classList.toggle('hidden');
+        });
+
+        // Close dropdown when clicking outside of it
+        document.addEventListener('click', function (event) {
+            var dropdown = document.getElementById('dropdownContent');
+            var avatar = document.getElementById('avatarImage');
+
+            if (!avatar.contains(event.target) && !dropdown.contains(event.target)) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        // Logout button click event
+        document.getElementById('logoutButton').addEventListener('click', function () {
+            // Ask for confirmation before logout
+            var confirmLogout = confirm("Are you sure you want to logout?");
+
+            // If the user confirms, proceed with logout
+            if (confirmLogout) {
+                // Add logout functionality here
+
+                // Redirect to the logout route (replace "/logout" with your actual logout route)
+                window.location.href = "/logout";
+            }
+
+        });
+    </script>
+
+
+
+
 
     <a href="/form" class="add-tweet-button text-white text-xl transition">
         Add Tweet
@@ -130,6 +207,7 @@
     {{end}}
 
 </div>
+
 </body>
 
 </html>

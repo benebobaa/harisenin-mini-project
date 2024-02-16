@@ -4,10 +4,11 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	awsSess "github.com/aws/aws-sdk-go/aws/session"
+	"github.com/aws/aws-sdk-go/service/s3"
 	"github.com/benebobaa/harisenin-mini-project/shared/util"
 )
 
-func NewSessionAWSS3(c util.Config) (*awsSess.Session, error) {
+func NewSessionAWSS3(c util.Config) (*s3.S3, error) {
 
 	sess, err := awsSess.NewSession(&aws.Config{
 		Region:      aws.String(c.AWSRegion),
@@ -18,5 +19,7 @@ func NewSessionAWSS3(c util.Config) (*awsSess.Session, error) {
 		return nil, err
 	}
 
-	return sess, nil
+	s3Client := s3.New(sess)
+
+	return s3Client, nil
 }
