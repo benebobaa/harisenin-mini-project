@@ -45,7 +45,6 @@ func (t *tweetControllerImpl) FindAllTweet(ctx *fiber.Ctx) error {
 
 		usernameUser = usernameAndId.Username
 
-		log.Printf("username n id controller %s - %s", usernameAndId.Username, usernameAndId.UserID)
 	}
 
 	tweets, err := t.domain.TweetUsecase.FindAllTweet()
@@ -68,10 +67,16 @@ func (t *tweetControllerImpl) CreateTweet(ctx *fiber.Ctx) error {
 
 	ses, _ := t.domain.Store.Get(ctx)
 	payloadID := ses.Get(middleware.AuthorizationPayloadKey)
-	fmt.Println("payload sess", payloadID)
 
 	var tweet request.TweetRequestDTO
-	tweet.UserID = payloadID.(string)
+	usernameAndId, err := util.FromStringToUsernameAndUUID(payloadID.(string))
+
+	if err != nil {
+		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid request body")
+		return ctx.Status(statusCode).JSON(resp)
+	}
+
+	tweet.UserID = usernameAndId.UserID
 
 	if err := ctx.BodyParser(&tweet); err != nil {
 		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid request body")
@@ -84,7 +89,6 @@ func (t *tweetControllerImpl) CreateTweet(ctx *fiber.Ctx) error {
 	}
 
 	fileImage, err := ctx.FormFile("newImage")
-	//fmt.Println("fileImage", fileImage)
 
 	if err != nil {
 		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid file upload")
@@ -113,7 +117,14 @@ func (t *tweetControllerImpl) CommentTweet(ctx *fiber.Ctx) error {
 	fmt.Println("payload sess", payloadID)
 
 	var comment request.CommentRequestDTO
-	comment.UserID = payloadID.(string)
+	usernameAndId, err := util.FromStringToUsernameAndUUID(payloadID.(string))
+
+	if err != nil {
+		resp, statusCode := util.ConstructResponseError(fiber.StatusBadRequest, "Invalid request body")
+		return ctx.Status(statusCode).JSON(resp)
+	}
+
+	comment.UserID = usernameAndId.UserID
 
 	postId := ctx.Params("post_id")
 	if err := ctx.BodyParser(&comment); err != nil {

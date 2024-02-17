@@ -62,15 +62,20 @@ func (a *AwsS3) UploadFile(file *multipart.FileHeader) (entity.Image, error) {
 	// Create an io.Reader from the resizedBytes
 	fileReader := bytes.NewReader(resizedBytes)
 
-	// Upload the resized file to S3
-	_, err = a.S3.PutObject(&s3.PutObjectInput{
+	objectInput := &s3.PutObjectInput{
 		Bucket:        aws.String(a.AwsBucket),
 		Key:           aws.String(objectKey),
 		ACL:           aws.String("public-read"),
 		Body:          fileReader,
 		ContentLength: aws.Int64(size),
 		ContentType:   aws.String(fileType),
-	})
+	}
+
+	// Upload the resized file to S3
+	_, err = a.S3.PutObject(objectInput)
+	if err != nil {
+		return entity.Image{}, err
+	}
 
 	if err != nil {
 		return entity.Image{}, err

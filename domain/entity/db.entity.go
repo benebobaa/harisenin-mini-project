@@ -6,15 +6,14 @@ import (
 )
 
 type Post struct {
-	ID         uuid.UUID `gorm:"column:id" json:"post_id"`
-	Title      string    `gorm:"column:title" json:"title"`
-	Content    string    `gorm:"column:content" json:"content"`
-	TotalPoint int       `gorm:"column:total_point" json:"total_point"`
-	UserID     string    `gorm:"column:user_id" json:"user_id"`
-	Image      Image     `gorm:"Foreignkey:post_id;association_foreignkey:ID;" json:"image"`
-	User       User      `gorm:"foreignkey:UserID;association_foreignkey:ID" json:"user"`
-	Comment    []Comment `gorm:"Foreignkey:post_id;association_foreignkey:ID;" json:"comment"`
-	CreatedAt  time.Time `gorm:"column:created_at" json:"-"`
+	ID        uuid.UUID `gorm:"column:id" json:"post_id"`
+	Title     string    `gorm:"column:title" json:"title"`
+	Content   string    `gorm:"column:content" json:"content"`
+	UserID    string    `gorm:"column:user_id" json:"user_id"`
+	Image     Image     `gorm:"Foreignkey:post_id;association_foreignkey:ID;" json:"image"`
+	User      User      `gorm:"foreignkey:UserID;association_foreignkey:ID" json:"user"`
+	Comment   []Comment `gorm:"Foreignkey:post_id;association_foreignkey:ID;" json:"comment"`
+	CreatedAt time.Time `gorm:"column:created_at" json:"-"`
 }
 
 type Comment struct {
