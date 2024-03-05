@@ -14,10 +14,10 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:8080"
+      - "8082:8082"
     environment:
       - DB_SOURCE=postgres://root:root@postgres:5432/harisenin_project?sslmode=disable
-      - PORT_APP=8080
+      - PORT_APP=8082
       - DB_DSN=host=postgres user=root password=secret dbname=motivational_quote port=5432
       - APP_NAME=Beneboba-Tweets
       - TOKEN_SYMETRIC_KEY=msfwvvokev71979lkfoqjipld97802jw

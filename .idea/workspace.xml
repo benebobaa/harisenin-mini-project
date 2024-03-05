@@ -7,10 +7,6 @@
     <list default="true" id="5329b4fa-6a63-46bc-a081-3aff04080b07" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.env" beforeDir="false" afterPath="$PROJECT_DIR$/app.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/delivery/http/controller/tweet.controller.go" beforeDir="false" afterPath="$PROJECT_DIR$/delivery/http/controller/tweet.controller.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/entity/db.entity.go" beforeDir="false" afterPath="$PROJECT_DIR$/domain/entity/db.entity.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/util/upload_image/upload.s3.go" beforeDir="false" afterPath="$PROJECT_DIR$/shared/util/upload_image/upload.s3.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
